@@ -28,12 +28,13 @@
             align-items: center;
             text-align: center;
             position: absolute;
-            padding: 20px;
+            padding: 10px;
             box-sizing: border-box;
             background: rgba(0, 0, 0, 0.8);
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
             transition: all 0.5s ease;
+            transform: scale(1);
         }
 
         .slide.active {
@@ -114,6 +115,35 @@
             th, td {
                 padding: 5px;
                 font-size: 0.8rem;
+            }
+
+            .slide {
+                padding: 5px;
+                transform: scale(0.9);
+            }
+        }
+
+        @media only screen and (max-width: 400px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.2rem;
+            }
+
+            p, ul {
+                font-size: 0.8rem;
+            }
+
+            th, td {
+                padding: 3px;
+                font-size: 0.7rem;
+            }
+
+            .slide {
+                padding: 2px;
+                transform: scale(0.8);
             }
         }
     </style>
