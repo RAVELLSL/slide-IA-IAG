@@ -13,14 +13,23 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            background-color: #000;
             color: #fff;
             overflow: hidden;
         }
 
-        .slide {
+        .container {
             width: 90%;
-            max-width: 800px;
+            max-width: 1600px;
+            aspect-ratio: 16 / 9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .slide {
+            width: 100%;
             height: 100%;
             display: none;
             flex-direction: column;
@@ -28,13 +37,12 @@
             align-items: center;
             text-align: center;
             position: absolute;
-            padding: 10px;
+            padding: 20px;
             box-sizing: border-box;
             background: rgba(0, 0, 0, 0.8);
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
             transition: all 0.5s ease;
-            transform: scale(1);
         }
 
         .slide.active {
@@ -47,19 +55,19 @@
         }
 
         h1 {
-            font-size: 2.5rem;
+            font-size: 4rem;
             font-weight: 700;
             margin-bottom: 20px;
         }
 
         h2 {
-            font-size: 2rem;
+            font-size: 3rem;
             font-weight: 400;
             margin-bottom: 20px;
         }
 
         p, ul {
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             font-weight: 300;
             margin-bottom: 20px;
             color: #fff;
@@ -69,20 +77,20 @@
         ul {
             text-align: left;
             list-style-type: disc;
-            padding-left: 20px;
+            padding-left: 40px;
         }
 
         table {
-            width: 100%;
+            width: 80%;
             border-collapse: collapse;
             margin: 20px 0;
         }
 
         th, td {
             border: 1px solid #0ff;
-            padding: 10px;
+            padding: 15px;
             text-align: center;
-            font-size: 1rem;
+            font-size: 1.2rem;
             color: #fff;
         }
 
@@ -91,12 +99,59 @@
         }
 
         img {
-            max-width: 100%;
+            max-width: 80%;
             height: auto;
             margin-bottom: 20px;
             border: 2px solid #0ff;
             border-radius: 10px;
             box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+        }
+
+        @media only screen and (max-width: 1200px) {
+            .container {
+                width: 100%;
+                padding: 0 10px;
+            }
+
+            h1 {
+                font-size: 3rem;
+            }
+
+            h2 {
+                font-size: 2.5rem;
+            }
+
+            p, ul {
+                font-size: 1.2rem;
+            }
+
+            th, td {
+                padding: 10px;
+                font-size: 1rem;
+            }
+        }
+
+        @media only screen and (max-width: 800px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            p, ul {
+                font-size: 1rem;
+            }
+
+            th, td {
+                padding: 8px;
+                font-size: 0.9rem;
+            }
+
+            .container {
+                padding: 0 5px;
+            }
         }
 
         @media only screen and (max-width: 600px) {
@@ -109,7 +164,7 @@
             }
 
             p, ul {
-                font-size: 1rem;
+                font-size: 0.8rem;
             }
 
             th, td {
@@ -117,230 +172,207 @@
                 font-size: 0.8rem;
             }
 
-            .slide {
-                padding: 5px;
-                transform: scale(0.9);
-            }
-        }
-
-        @media only screen and (max-width: 400px) {
-            h1 {
-                font-size: 1.5rem;
-            }
-
-            h2 {
-                font-size: 1.2rem;
-            }
-
-            p, ul {
-                font-size: 0.8rem;
-            }
-
-            th, td {
-                padding: 3px;
-                font-size: 0.7rem;
-            }
-
-            .slide {
-                padding: 2px;
-                transform: scale(0.8);
+            .container {
+                padding: 0 2px;
             }
         }
     </style>
 </head>
 <body>
-    <section class="slide active" id="slide1">
-        <h1>Diferenças entre IA e IAG</h1>
-        <img src="https://media.licdn.com/dms/image/D4E22AQHuTKHkSS0gnQ/feedshare-shrink_800/0/1722268740077?e=1724889600&v=beta&t=yidTaWvwVVWVyzOHt9ajObbW7x36g_yk9eTDUo9BlPI" alt="Imagem destacada">
-    </section>
+    <div class="container">
+        <section class="slide active" id="slide1">
+            <h1>Diferenças entre IA e IAG</h1>
+            <img src="https://media.licdn.com/dms/image/D4E22AQHuTKHkSS0gnQ/feedshare-shrink_800/0/1722268740077?e=1724889600&v=beta&t=yidTaWvwVVWVyzOHt9ajObbW7x36g_yk9eTDUo9BlPI" alt="Imagem destacada">
+        </section>
 
-    <section class="slide" id="slide2">
-        <h2>Introdução</h2>
-        <img src="https://media.licdn.com/dms/image/D4E22AQHi8oo_lRCokw/feedshare-shrink_800/0/1722269404842?e=1724889600&v=beta&t=wzQbpIp8trDqmSMYkPS2qu7yyI8zkGILN81hs09sljU" alt="Imagem ilustrativa">
-        <p>A inteligência artificial (IA) e a inteligência artificial geral (IAG) são conceitos fundamentais na área da ciência da computação e da inteligência de máquinas, mas representam níveis distintos de capacidade e aplicação.</p>
-    </section>
+        <section class="slide" id="slide2">
+            <h2>Introdução</h2>
+            <img src="https://media.licdn.com/dms/image/D4E22AQHi8oo_lRCokw/feedshare-shrink_800/0/1722269404842?e=1724889600&v=beta&t=wzQbpIp8trDqmSMYkPS2qu7yyI8zkGILN81hs09sljU" alt="Imagem ilustrativa">
+            <p>A inteligência artificial (IA) e a inteligência artificial geral (IAG) são conceitos fundamentais na área da ciência da computação e da inteligência de máquinas, mas representam níveis distintos de capacidade e aplicação.</p>
+        </section>
 
-    <section class="slide" id="slide3">
-        <h2>O que é Inteligência Artificial (IA)?</h2>
-        <img src="https://media.licdn.com/dms/image/D4E22AQGK9r8g13GWcA/feedshare-shrink_800/0/1722269488731?e=1724889600&v=beta&t=RpqBSvYBlxK4Ml-d0EItF7tXIpyp2XSLpsQss3hWjSQ" alt="Imagem ilustrativa">
-        <p>A IA refere-se a sistemas ou máquinas que podem realizar tarefas que normalmente requerem inteligência humana. Exemplos: reconhecimento de fala, tradução de idiomas, reconhecimento de padrões, tomada de decisão.</p>
-    </section>
+        <section class="slide" id="slide3">
+            <h2>O que é Inteligência Artificial (IA)?</h2>
+            <img src="https://media.licdn.com/dms/image/D4E22AQGK9r8g13GWcA/feedshare-shrink_800/0/1722269488731?e=1724889600&v=beta&t=RpqBSvYBlxK4Ml-d0EItF7tXIpyp2XSLpsQss3hWjSQ" alt="Imagem ilustrativa">
+            <p>A IA refere-se a sistemas ou máquinas que podem realizar tarefas que normalmente requerem inteligência humana. Exemplos: reconhecimento de fala, tradução de idiomas, reconhecimento de padrões, tomada de decisão.</p>
+        </section>
 
-    <section class="slide" id="slide4">
-        <h2>Características da IA</h2>
-        <img src="https://media.licdn.com/dms/image/D4E22AQHt8w-ZN9rWxQ/feedshare-shrink_800/0/1722269586792?e=1724889600&v=beta&t=E7CoydBt378andXlw3h1LtxTE14_vDETLeH6tP6CyK8" alt="Imagem ilustrativa">
-        <ul>
-            <li><strong>Especializada:</strong> Projetada para executar tarefas específicas.</li>
-            <li><strong>Aprendizagem e Adaptação:</strong> Pode aprender e melhorar a partir da experiência.</li>
-            <li><strong>Focada em Domínios Restritos:</strong> Funciona bem dentro dos domínios para os quais foi treinada.</li>
-        </ul>
-    </section>
+        <section class="slide" id="slide4">
+            <h2>Características da IA</h2>
+            <img src="https://media.licdn.com/dms/image/D4E22AQHt8w-ZN9rWxQ/feedshare-shrink_800/0/1722269586792?e=1724889600&v=beta&t=E7CoydBt378andXlw3h1LtxTE14_vDETLeH6tP6CyK8" alt="Imagem ilustrativa">
+            <ul>
+                <li><strong>Especializada:</strong> Projetada para executar tarefas específicas.</li>
+                <li><strong>Aprendizagem e Adaptação:</strong> Pode aprender e melhorar a partir da experiência.</li>
+                <li><strong>Focada em Domínios Restritos:</strong> Funciona bem dentro dos domínios para os quais foi treinada.</li>
+            </ul>
+        </section>
 
-    <section class="slide" id="slide5">
-        <h2>Exemplos de IA</h2>
-        <img src="https://media.licdn.com/dms/image/D4E22AQEmem6TVt-ieg/feedshare-shrink_800/0/1722269672714?e=1724889600&v=beta&t=8CIQ9LJuQQGYMv7I0toq-IQiGegw-D1ecFVsB4w3n9U" alt="Imagem ilustrativa">
-        <ul>
-            <li>Assistentes virtuais como Siri, Alexa, e Google Assistant.</li>
-            <li>Sistemas de recomendação em plataformas de streaming e e-commerce.</li>
-            <li>Veículos autônomos.</li>
-        </ul>
-    </section>
+        <section class="slide" id="slide5">
+            <h2>Exemplos de IA</h2>
+            <img src="https://media.licdn.com/dms/image/D4E22AQEmem6TVt-ieg/feedshare-shrink_800/0/1722269672714?e=1724889600&v=beta&t=8CIQ9LJuQQGYMv7I0toq-IQiGegw-D1ecFVsB4w3n9U" alt="Imagem ilustrativa">
+            <ul>
+                <li>Assistentes virtuais como Siri, Alexa, e Google Assistant.</li>
+                <li>Sistemas de recomendação em plataformas de streaming e e-commerce.</li>
+                <li>Veículos autônomos.</li>
+            </ul>
+        </section>
 
-    <section class="slide" id="slide6">
-        <h2>O que é Inteligência Artificial Geral (IAG)?</h2>
-        <img src="https://media.licdn.com/dms/image/D4E22AQHd5cTM34ucKQ/feedshare-shrink_800/0/1722269764433?e=1724889600&v=beta&t=E7zDQYEfzXAHZ17PF4qk4OdEz1miEusHbnBKN5FeecU" alt="Imagem ilustrativa">
-        <p>Também conhecida como inteligência de máquina forte. Possui a capacidade de entender, aprender e aplicar conhecimentos de maneira ampla, em qualquer domínio ou tarefa, similar à inteligência humana.</p>
-    </section>
+        <section class="slide" id="slide6">
+            <h2>O que é Inteligência Artificial Geral (IAG)?</h2>
+            <img src="https://media.licdn.com/dms/image/D4E22AQHd5cTM34ucKQ/feedshare-shrink_800/0/1722269764433?e=1724889600&v=beta&t=E7zDQYEfzXAHZ17PF4qk4OdEz1miEusHbnBKN5FeecU" alt="Imagem ilustrativa">
+            <p>Também conhecida como inteligência de máquina forte. Possui a capacidade de entender, aprender e aplicar conhecimentos de maneira ampla, em qualquer domínio ou tarefa, similar à inteligência humana.</p>
+        </section>
 
-    <section class="slide" id="slide7">
-        <h2>Características da IAG</h2>
-        <img src="https://media.licdn.com/dms/image/D4E22AQFaRRI_Gzk7uA/feedshare-shrink_800/0/1722269860182?e=1724889600&v=beta&t=rz1wilfEWqyqFHCdIPLsZSnt8ecc76yFHRRhBSR5gUI" alt="Imagem ilustrativa">
-        <ul>
-            <li><strong>Versatilidade:</strong> Pode realizar qualquer tarefa intelectual que um ser humano possa fazer.</li>
-            <li><strong>Autonomia Completa:</strong> Opera de forma autônoma em qualquer área do conhecimento.</li>
-            <li><strong>Consciência e Entendimento Contextual:</strong> Compreensão profunda e contextual das situações.</li>
-        </ul>
-    </section>
+        <section class="slide" id="slide7">
+            <h2>Características da IAG</h2>
+            <img src="https://media.licdn.com/dms/image/D4E22AQFaRRI_Gzk7uA/feedshare-shrink_800/0/1722269860182?e=1724889600&v=beta&t=rz1wilfEWqyqFHCdIPLsZSnt8ecc76yFHRRhBSR5gUI" alt="Imagem ilustrativa">
+            <ul>
+                <li><strong>Versatilidade:</strong> Pode realizar qualquer tarefa intelectual que um ser humano possa fazer.</li>
+                <li><strong>Autonomia Completa:</strong> Opera de forma autônoma em qualquer área do conhecimento.</li>
+                <li><strong>Consciência e Entendimento Contextual:</strong> Compreensão profunda e contextual das situações.</li>
+            </ul>
+        </section>
 
-    <section class="slide" id="slide8">
-        <h2>Exemplos Teóricos de IAG</h2>
-        <img src="https://media.licdn.com/dms/image/D4E22AQFEEyoHNYqjGg/feedshare-shrink_800/0/1722269942735?e=1724889600&v=beta&t=TDUHWU5_6qwbqudk9UotyrVU3o6jMBuSGU8SBzYZHOQ" alt="Imagem ilustrativa">
-        <ul>
-            <li>Um sistema de IAG poderia escrever romances, criar arte, e tomar decisões complexas de forma autônoma.</li>
-            <li>Atualmente, a IAG é um conceito teórico, pois não existem sistemas que a alcancem plenamente.</li>
-        </ul>
-    </section>
+        <section class="slide" id="slide8">
+            <h2>Exemplos Teóricos de IAG</h2>
+            <img src="https://media.licdn.com/dms/image/D4E22AQFEEyoHNYqjGg/feedshare-shrink_800/0/1722269942735?e=1724889600&v=beta&t=TDUHWU5_6qwbqudk9UotyrVU3o6jMBuSGU8SBzYZHOQ" alt="Imagem ilustrativa">
+            <ul>
+                <li>Um sistema de IAG poderia escrever romances, criar arte, e tomar decisões complexas de forma autônoma.</li>
+                <li>Atualmente, a IAG é um conceito teórico, pois não existem sistemas que a alcancem plenamente.</li>
+            </ul>
+        </section>
 
-    <section class="slide" id="slide9">
-        <h2>Comparação entre IA e IAG</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Aspecto</th>
-                    <th>IA</th>
-                    <th>IAG</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Versatilidade</td>
-                    <td>Alta</td>
-                    <td>Máxima</td>
-                </tr>
-                <tr>
-                    <td>Consciência</td>
-                    <td>Não</td>
-                    <td>Possivelmente</td>
-                </tr>
-                <tr>
-                    <td>Exemplos</td>
-                    <td>Assistentes virtuais, sistemas de recomendação</td>
-                    <td>Máquinas com compreensão profunda</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
+        <section class="slide" id="slide9">
+            <h2>Comparação entre IA e IAG</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Aspecto</th>
+                        <th>IA</th>
+                        <th>IAG</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Versatilidade</td>
+                        <td>Alta</td>
+                        <td>Máxima</td>
+                    </tr>
+                    <tr>
+                        <td>Consciência</td>
+                        <td>Não</td>
+                        <td>Possivelmente</td>
+                    </tr>
+                    <tr>
+                        <td>Exemplos</td>
+                        <td>Assistentes virtuais, sistemas de recomendação</td>
+                        <td>Máquinas com compreensão profunda</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
 
-    <section class="slide" id="slide10">
-        <h2>Tipos de Inteligência Artificial</h2>
-        <img src="https://media.licdn.com/dms/image/D4E22AQEYPljruEBrow/feedshare-shrink_800/0/1722270022931?e=1724889600&v=beta&t=5DLXJx5b5qE61sRlDQx139J6O98wcqXvB2I6gT6CXek" alt="Imagem ilustrativa">
-        <ul>
-            <li><strong>Baseada em Capacidades:</strong> IA Estreita, IA Geral, Superinteligência Artificial.</li>
-            <li><strong>Baseada em Funcionalidade:</strong> Sistemas Reativos, Memória Limitada, Teoria da Mente, Autoconsciência.</li>
-            <li><strong>Baseada em Técnicas de Desenvolvimento:</strong> IA Simbólica, IA Conectivista, IA Evolutiva, IA Bayesiana, IA Híbrida.</li>
-            <li><strong>Baseada em Aplicações:</strong> NLP, Visão Computacional, Robótica, Jogos e Entretenimento, Sistemas de Recomendação, Assistência Médica.</li>
-        </ul>
-    </section>
+        <section class="slide" id="slide10">
+            <h2>Tipos de Inteligência Artificial</h2>
+            <img src="https://media.licdn.com/dms/image/D4E22AQEYPljruEBrow/feedshare-shrink_800/0/1722270022931?e=1724889600&v=beta&t=5DLXJx5b5qE61sRlDQx139J6O98wcqXvB2I6gT6CXek" alt="Imagem ilustrativa">
+            <ul>
+                <li><strong>Baseada em Capacidades:</strong> IA Estreita, IA Geral, Superinteligência Artificial.</li>
+                <li><strong>Baseada em Funcionalidade:</strong> Sistemas Reativos, Memória Limitada, Teoria da Mente, Autoconsciência.</li>
+                <li><strong>Baseada em Técnicas de Desenvolvimento:</strong> IA Simbólica, IA Conectivista, IA Evolutiva, IA Bayesiana, IA Híbrida.</li>
+                <li><strong>Baseada em Aplicações:</strong> NLP, Visão Computacional, Robótica, Jogos e Entretenimento, Sistemas de Recomendação, Assistência Médica.</li>
+            </ul>
+        </section>
 
-    <section class="slide" id="slide11">
-        <h2>Baseada em Capacidades</h2>
-        <img src="https://media.licdn.com/dms/image/D4E22AQFE2MPMLDaLsQ/feedshare-shrink_800/0/1722270744481?e=1724889600&v=beta&t=Zp8X06BeIflIARG-9A4czkP8AqnVnUfcwCg53pkr79E" alt="Imagem ilustrativa">
-        <ul>
-            <li><strong>IA Estreita (ANI):</strong> IA fraca, realiza tarefas específicas.</li>
-            <li><strong>IA Geral (AGI):</strong> IA forte, aplica conhecimentos em várias áreas.</li>
-            <li><strong>Superinteligência Artificial (ASI):</strong> IA hipotética, ultrapassa a inteligência humana.</li>
-        </ul>
-    </section>
+        <section class="slide" id="slide11">
+            <h2>Baseada em Capacidades</h2>
+            <img src="https://media.licdn.com/dms/image/D4E22AQFE2MPMLDaLsQ/feedshare-shrink_800/0/1722270744481?e=1724889600&v=beta&t=Zp8X06BeIflIARG-9A4czkP8AqnVnUfcwCg53pkr79E" alt="Imagem ilustrativa">
+            <ul>
+                <li><strong>IA Estreita (ANI):</strong> IA fraca, realiza tarefas específicas.</li>
+                <li><strong>IA Geral (AGI):</strong> IA forte, aplica conhecimentos em várias áreas.</li>
+                <li><strong>Superinteligência Artificial (ASI):</strong> IA hipotética, ultrapassa a inteligência humana.</li>
+            </ul>
+        </section>
 
-    <section class="slide" id="slide12">
-        <h2>Baseada em Funcionalidade</h2>
-        <img src="https://media.licdn.com/dms/image/D4E22AQEMlv1fncu7oA/feedshare-shrink_800/0/1722270766908?e=1724889600&v=beta&t=itxTQEYE8bDX2y1DKbGVqU1kVHamO1qL2jlMA1ImR2k" alt="Imagem ilustrativa">
-        <ul>
-            <li><strong>Sistemas Reativos:</strong> Reagem a situações atuais.</li>
-            <li><strong>Memória Limitada:</strong> Usam experiências passadas para decisões futuras.</li>
-            <li><strong>Teoria da Mente:</strong> Entendem e reagem a emoções humanas.</li>
-            <li><strong>Autoconsciência:</strong> Senso de autoconsciência e compreensão própria.</li>
-        </ul>
-    </section>
+        <section class="slide" id="slide12">
+            <h2>Baseada em Funcionalidade</h2>
+            <img src="https://media.licdn.com/dms/image/D4E22AQEMlv1fncu7oA/feedshare-shrink_800/0/1722270766908?e=1724889600&v=beta&t=itxTQEYE8bDX2y1DKbGVqU1kVHamO1qL2jlMA1ImR2k" alt="Imagem ilustrativa">
+            <ul>
+                <li><strong>Sistemas Reativos:</strong> Reagem a situações atuais.</li>
+                <li><strong>Memória Limitada:</strong> Usam experiências passadas para decisões futuras.</li>
+                <li><strong>Teoria da Mente:</strong> Entendem e reagem a emoções humanas.</li>
+                <li><strong>Autoconsciência:</strong> Senso de autoconsciência e compreensão própria.</li>
+            </ul>
+        </section>
 
-    <section class="slide" id="slide13">
-        <h2>Baseada em Técnicas de Desenvolvimento</h2>
-        <img src="https://media.licdn.com/dms/image/D4E22AQE0pL2Ud5vTcA/feedshare-shrink_800/0/1722270789944?e=1724889600&v=beta&t=t0VgZN2iVevxX1VsmLL7BIlbMBRWIIyYVsQMKn1C6fs" alt="Imagem ilustrativa">
-        <ul>
-            <li><strong>IA Simbólica:</strong> Regras e lógica formal.</li>
-            <li><strong>IA Conectivista:</strong> Redes neurais artificiais.</li>
-            <li><strong>IA Evolutiva:</strong> Algoritmos genéticos.</li>
-            <li><strong>IA Bayesiana:</strong> Probabilidade para decisões.</li>
-            <li><strong>IA Híbrida:</strong> Combina várias abordagens.</li>
-        </ul>
-    </section>
+        <section class="slide" id="slide13">
+            <h2>Baseada em Técnicas de Desenvolvimento</h2>
+            <img src="https://media.licdn.com/dms/image/D4E22AQE0pL2Ud5vTcA/feedshare-shrink_800/0/1722270789944?e=1724889600&v=beta&t=t0VgZN2iVevxX1VsmLL7BIlbMBRWIIyYVsQMKn1C6fs" alt="Imagem ilustrativa">
+            <ul>
+                <li><strong>IA Simbólica:</strong> Regras e lógica formal.</li>
+                <li><strong>IA Conectivista:</strong> Redes neurais artificiais.</li>
+                <li><strong>IA Evolutiva:</strong> Algoritmos genéticos.</li>
+                <li><strong>IA Bayesiana:</strong> Probabilidade para decisões.</li>
+                <li><strong>IA Híbrida:</strong> Combina várias abordagens.</li>
+            </ul>
+        </section>
 
-    <section class="slide" id="slide14">
-        <h2>Baseada em Aplicações</h2>
-        <img src="https://media.licdn.com/dms/image/D4E22AQE6qculZAHr0g/feedshare-shrink_800/0/1722270815997?e=1724889600&v=beta&t=huprTXvsk3Qsnq_N1AvWlAy-ga0PW_MfnxscmdNAeqs" alt="Imagem ilustrativa">
-        <ul>
-            <li><strong>NLP:</strong> Processamento de Linguagem Natural.</li>
-            <li><strong>Visão Computacional:</strong> Interpretação de imagens e vídeos.</li>
-            <li><strong>Robótica:</strong> Automação de tarefas físicas.</li>
-            <li><strong>Jogos e Entretenimento:</strong> Comportamentos inteligentes em jogos.</li>
-            <li><strong>Sistemas de Recomendação:</strong> Sugestões de produtos e serviços.</li>
-            <li><strong>Assistência Médica:</strong> Diagnóstico e tratamento de pacientes.</li>
-        </ul>
-    </section>
+        <section class="slide" id="slide14">
+            <h2>Baseada em Aplicações</h2>
+            <img src="https://media.licdn.com/dms/image/D4E22AQE6qculZAHr0g/feedshare-shrink_800/0/1722270815997?e=1724889600&v=beta&t=huprTXvsk3Qsnq_N1AvWlAy-ga0PW_MfnxscmdNAeqs" alt="Imagem ilustrativa">
+            <ul>
+                <li><strong>NLP:</strong> Processamento de Linguagem Natural.</li>
+                <li><strong>Visão Computacional:</strong> Interpretação de imagens e vídeos.</li>
+                <li><strong>Robótica:</strong> Automação de tarefas físicas.</li>
+                <li><strong>Jogos e Entretenimento:</strong> Comportamentos inteligentes em jogos.</li>
+                <li><strong>Sistemas de Recomendação:</strong> Sugestões de produtos e serviços.</li>
+                <li><strong>Assistência Médica:</strong> Diagnóstico e tratamento de pacientes.</li>
+            </ul>
+        </section>
 
-    <section class="slide" id="slide15">
-        <h2>Tipos de Inteligência Artificial Geral (IAG)</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Tipo</th>
-                    <th>Descrição</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Versatilidade</td>
-                    <td>A IAG teria a capacidade de realizar qualquer tarefa intelectual que um ser humano possa fazer. Isso inclui a capacidade de aprender e aplicar conhecimentos em contextos completamente novos.</td>
-                </tr>
-                <tr>
-                    <td>Autonomia Completa</td>
-                    <td>Diferente da IA especializada, a IAG seria capaz de operar de forma autônoma em qualquer área do conhecimento, sem necessidade de reprogramação ou treinamento específico para novas tarefas.</td>
-                </tr>
-                <tr>
-                    <td>Consciência e Entendimento Contextual</td>
-                    <td>Em teoria, a IAG também teria uma compreensão mais profunda e contextual das situações, semelhante à consciência humana.</td>
-                </tr>
-                <tr>
-                    <td>Adaptação e Aprendizado Contínuo</td>
-                    <td>A IAG seria capaz de adaptar-se rapidamente a novas situações e continuar aprendendo e evoluindo com base nas experiências.</td>
-                </tr>
-                <tr>
-                    <td>Tomada de Decisão Independente</td>
-                    <td>A IAG poderia tomar decisões complexas de maneira independente, considerando múltiplos fatores e contextos, similar a um ser humano.</td>
-                </tr>
-                <tr>
-                    <td>Interação Natural com Humanos</td>
-                    <td>A IAG teria a capacidade de interagir de forma natural e intuitiva com os humanos, compreendendo e respondendo a emoções, linguagem e comportamentos.</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
+        <section class="slide" id="slide15">
+            <h2>Tipos de Inteligência Artificial Geral (IAG)</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tipo</th>
+                        <th>Descrição</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Versatilidade</td>
+                        <td>A IAG teria a capacidade de realizar qualquer tarefa intelectual que um ser humano possa fazer. Isso inclui a capacidade de aprender e aplicar conhecimentos em contextos completamente novos.</td>
+                    </tr>
+                    <tr>
+                        <td>Autonomia Completa</td>
+                        <td>Diferente da IA especializada, a IAG seria capaz de operar de forma autônoma em qualquer área do conhecimento, sem necessidade de reprogramação ou treinamento específico para novas tarefas.</td>
+                    </tr>
+                    <tr>
+                        <td>Consciência e Entendimento Contextual</td>
+                        <td>Em teoria, a IAG também teria uma compreensão mais profunda e contextual das situações, semelhante à consciência humana.</td>
+                    </tr>
+                    <tr>
+                        <td>Adaptação e Aprendizado Contínuo</td>
+                        <td>A IAG seria capaz de adaptar-se rapidamente a novas situações e continuar aprendendo e evoluindo com base nas experiências.</td>
+                    </tr>
+                    <tr>
+                        <td>Tomada de Decisão Independente</td>
+                        <td>A IAG poderia tomar decisões complexas de maneira independente, considerando múltiplos fatores e contextos, similar a um ser humano.</td>
+                    </tr>
+                    <tr>
+                        <td>Interação Natural com Humanos</td>
+                        <td>A IAG teria a capacidade de interagir de forma natural e intuitiva com os humanos, compreendendo e respondendo a emoções, linguagem e comportamentos.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
 
-    <section class="slide" id="slide16">
-        <h2>Conclusão</h2>
-        <img src="https://media.licdn.com/dms/image/D4E22AQECz8Tkpp9rEQ/feedshare-shrink_800/0/1722270845934?e=1724889600&v=beta&t=Jn-HrZbFyjDmCtUOha-xYIT9dgGYQfC6ZwCBr8eRpbM" alt="Imagem ilustrativa">
-        <p>A IA e a IAG representam diferentes níveis de capacidades e aplicações. A IA é especializada e focada em tarefas específicas. A IAG é versátil, autônoma e possui uma compreensão profunda, ainda um conceito teórico. A evolução contínua da IA pode eventualmente levar ao desenvolvimento da IAG.</p>
-    </section>
+        <section class="slide" id="slide16">
+            <h2>Conclusão</h2>
+            <img src="https://media.licdn.com/dms/image/D4E22AQECz8Tkpp9rEQ/feedshare-shrink_800/0/1722270845934?e=1724889600&v=beta&t=Jn-HrZbFyjDmCtUOha-xYIT9dgGYQfC6ZwCBr8eRpbM" alt="Imagem ilustrativa">
+            <p>A IA e a IAG representam diferentes níveis de capacidades e aplicações. A IA é especializada e focada em tarefas específicas. A IAG é versátil, autônoma e possui uma compreensão profunda, ainda um conceito teórico. A evolução contínua da IA pode eventualmente levar ao desenvolvimento da IAG.</p>
+        </section>
+    </div>
 
     <script>
         let currentSlide = 0;
